@@ -15,15 +15,18 @@ public class TileMapExporter : MonoBehaviour
     [SerializeField] Tilemap map;
 
     [DllImport("__Internal")]
-    private static extern void send(String csv);
+    private static extern void Send (string csv);
 
 
 
     public void export() {
+        Debug.Log("sending...");
+        string file = saveMap(map);
+    #if UNITY_WEBGL == true && UNITY_EDITOR == false
+        Debug.Log("sending...");
+        Send (file);
+    #endif
 
-        String file = saveMap(map);
-        send(file);
-    
     }
 
     public String saveMap(Tilemap map) {
