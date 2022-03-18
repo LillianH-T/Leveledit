@@ -1,9 +1,10 @@
+// File: MyPlugin.jslib
 
 mergeInto(LibraryManager.library, {
-  send: function(csv){
+  Send: function (csv) {
     window.dispatchReactUnityEvent(
-      "send",
-      Pointer_stringify(csv)
+      "Send",
+	  Pointer_stringify(csv)
     );
   },
 });
