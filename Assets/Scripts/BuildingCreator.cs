@@ -69,7 +69,7 @@ public class BuildingCreator : Singleton<BuildingCreator> {
     }
 
     private void OnLeftClick (InputAction.CallbackContext ctx) {
-        if (selectedObj != null) {
+        if (selectedObj != null && !EventSystem.current.IsPointerOverGameObject()) {
             Debug.Log("Clicked");
             HandleDrawing ();
         }
