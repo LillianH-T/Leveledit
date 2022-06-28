@@ -8,7 +8,8 @@ public enum Category {
     Wall,
     Door,
     Gem,
-    Path
+    Path,
+    Gate
 
 }
 
